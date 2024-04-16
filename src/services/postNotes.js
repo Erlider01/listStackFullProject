@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const postNotes = (parse) => (axios
-  .post('https://nodeback-b7j8.onrender.com/post/', {
+  .post('http://localhost:3012/post', {
     content: parse
   })
   .then(r => r)

@@ -1,6 +1,7 @@
 import { Note } from './Note'
 
 export const Notes = ({ notes }) => {
+  console.log(notes)
   return (
     <ul>
       {notes.map((element) => (

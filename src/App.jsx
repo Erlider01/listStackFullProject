@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react'
+/* import { useEffect, useState } from 'react'
 import { getNotes } from './services/getNotes'
 import { Cargando } from './components/Cargando'
 import { Notes } from './components/Notes'
-import { Formulary } from './components/Formulary'
+import { Formulary } from './components/Formulary' */
+
+import Registro from './components/Registro'
+import './slyles.css'
 
 function App () {
-  const [notes, setNotes] = useState([])
+/*   const [notes, setNotes] = useState([])
 
   useEffect(() => {
     getNotes()
@@ -17,13 +20,15 @@ function App () {
 
   const handlerNotes = param => {
     setNotes(param)
-  }
+  } */
 
   return (
     <>
-      <h1>Notes</h1>
+      <Registro />
+
+      {/* <h1>Notes</h1>
       {!notes.length ? <Cargando /> : <Notes notes={notes} />}
-      <Formulary setNotes={handlerNotes} />
+      <Formulary setNotes={handlerNotes} /> */}
     </>
   )
 }

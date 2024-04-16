@@ -1,4 +1,4 @@
 import axios from 'axios'
 
 export const getNotes = () => (axios
-  .get('https://nodeback-b7j8.onrender.com/json'))
+  .get('http://localhost:3012/json'))

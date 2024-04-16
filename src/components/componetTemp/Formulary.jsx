@@ -1,5 +1,5 @@
-import { getNotes } from '../services/getNotes'
-import { postNotes } from '../services/postNotes'
+import { getNotes } from '../../services/getNotes'
+import { postNotes } from '../../services/postNotes'
 
 export const Formulary = ({ setNotes }) => {
   const handlerSubmit = (e) => {
