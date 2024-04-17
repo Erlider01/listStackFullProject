@@ -1,12 +1,25 @@
+/* variables */
+:root {
+    --fontColor: #020220;
+    --contrFont: #172885;
+    --contr2Font: #0085FF;
+    --urlColor: #AAFFD1;
+    --contrUrl: #76F8B3;
+    --colorNot: #ffffffcc;
+    --colorTrue: #fff;
+    --colorAlt: #807ee2;
+}
+
+
 /* Componente Titulo */
  .titulo {
-    color: rgba(255, 255, 255, 0.90);
+    color: var(--colorNot);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 
 .titulo:hover {
-    color: white;
+    color: var(--colorTrue);
 }
 
 /* Componente Registro */
@@ -18,6 +31,18 @@
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    max-width: 400px;
+    background: var(--contrFont);
+    padding: 50px 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 0px var(--colorAlt);
+    transition: all .2s ease-in-out;
+}
+
+.registro:hover {
+    box-shadow: 4px 4px 0px 0px var(--colorAlt);
 }
 
 .tituloRegistro {
@@ -29,3 +54,85 @@
     padding: 0;
     margin: 0;
 }
+
+/* Componente CrearFormulario */
+
+.formulario {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+
+.divFormText {
+    position: relative;
+}
+
+.formInput {
+    width: 100%;
+    background: none;
+    color: var(--colorTrue);
+    font-size: 1em;
+    padding: 0.6em .3em;
+    outline: none;
+    border: none;
+    border-bottom: 1px  solid var(--contr2Font);
+    font-family: Inter;
+}
+
+.formInput:focus + .formLabel, .formInput:not(:placeholder-shown) + .formLabel {
+    transform: translateY(-12px) scale(.7);
+    transform-origin: left top;
+    color: var(--colorTrue);
+}
+
+.formLabel {
+    color: var(--colorNot);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    transform: translateY(10px);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.formSubmit {
+    margin-top: 2em;
+    background: var(--urlColor);
+    color: var(--fontColor);
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    padding: .8em;
+    border: none;
+    border-radius: .5em;
+    outline: none;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    box-shadow: 1px 1px 0px 0px #807ee2;
+}
+
+.formSubmit:hover {
+    background: var(--contrUrl);
+    box-shadow: 3px 3px 0px 0px var(--fontColor)
+}
+
+.formSubmit:focus {
+    box-shadow: 5px 5px 0px 0px var(--fontColor)
+}
+
+.formLine {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--contrUrl);
+    transform: scale(0);
+    transform: left bottom;
+    transition: all .3s ease-out;
+}
+
+.formInput:focus ~ .formLine, .formInput:not(:placeholder-shown) ~ .formLine {
+    transform: scale(1);
+    }
